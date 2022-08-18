@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1:3307
--- Üretim Zamanı: 18 Ağu 2022, 13:10:44
+-- Üretim Zamanı: 18 Ağu 2022, 15:30:06
 -- Sunucu sürümü: 10.4.22-MariaDB
 -- PHP Sürümü: 8.1.1
 
@@ -44,7 +44,7 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `image`, `name`, `title`, `desc`, `slug`, `author`, `created_at`, `updated_at`) VALUES
-(1, '202208181102logo.png', '{\"az\":\"sdfsdfsdf\",\"en\":\"sdfsdfsdf\",\"ru\":\"sdfsdf\"}', '{\"az\":\"sdfsdf\",\"en\":\"sfsdf\",\"ru\":\"sdfsd\"}', '{\"az\":\"sdfsdf\",\"en\":\"sfsdf\",\"ru\":\"sdfsd\"}', 'dfgdfgv', '{\"az\":\"sfsdf\",\"en\":\"sfsf\",\"ru\":\"sdfsdf\"}', '2022-08-18 07:02:12', '2022-08-18 07:02:12');
+(1, '202208181102logo.png', '{\"az\":\"azsd\",\"en\":\"sdfsdfsdf\",\"ru\":\"sdfsdf\"}', '{\"az\":\"sdfsdf\",\"en\":\"sfsdf\",\"ru\":\"sdfsd\"}', '{\"az\":\"sdfsdf\",\"en\":\"sfsdf\",\"ru\":\"sdfsd\"}', 'dfgdfgv', '{\"az\":\"sfsdf\",\"en\":\"sfsf\",\"ru\":\"sdfsdf\"}', '2022-08-18 07:02:12', '2022-08-18 07:02:12');
 
 -- --------------------------------------------------------
 
@@ -91,6 +91,21 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Tablo için tablo yapısı `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Tablo için tablo yapısı `migrations`
 --
 
@@ -111,7 +126,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2022_08_18_053707_create_sliders_table', 2),
 (6, '2022_08_18_065543_create_contacts_table', 3),
-(7, '2022_08_18_102350_create_blogs_table', 4);
+(7, '2022_08_18_102350_create_blogs_table', 4),
+(8, '2022_08_18_131912_create_messages_table', 5);
 
 -- --------------------------------------------------------
 
@@ -216,6 +232,12 @@ ALTER TABLE `failed_jobs`
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
+-- Tablo için indeksler `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Tablo için indeksler `migrations`
 --
 ALTER TABLE `migrations`
@@ -271,10 +293,16 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- Tablo için AUTO_INCREMENT değeri `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- Tablo için AUTO_INCREMENT değeri `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `personal_access_tokens`
