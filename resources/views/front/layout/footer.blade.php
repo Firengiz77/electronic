@@ -8,9 +8,9 @@
                             <a href="{{route('front.index')}}"><img src="{{asset('/front/img/logo.png')}}" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@colorlib.com</li>
+                            <li>Address: {{ $contact->address }}</li>
+                            <li>Phone: {{ $contact->phone }}</li>
+                            <li>Email: {{ $contact->email }}</li>
                         </ul>
                     </div>
                 </div>
@@ -44,10 +44,16 @@
                             <button type="submit" class="site-btn">Subscribe</button>
                         </form>
                         <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            @if($contact->fb_link !== null)
+                            <a href="{{ $contact->fb_link }}"><i class="fa fa-facebook"></i></a>
+                            @endif
+                            @if($contact->insta_link !== null)
+                            <a href="{{ $contact->insta_link }}"><i class="fa fa-instagram"></i></a>
+                            @endif
+                            @if($contact->wp_link !== null)
+                            <a href="{{ $contact->wp_link }}"><i class="fa fa-whatsapp"></i></a>
+                            @endif
+                           
                         </div>
                     </div>
                 </div>

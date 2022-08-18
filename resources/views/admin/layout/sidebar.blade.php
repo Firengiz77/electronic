@@ -100,6 +100,32 @@
                 </li>
               </ul>
             </li>
+
+            <li class="menu-item">
+              <a href="{{route('admin.slider')}}" class="menu-link">
+                <i class='bx bx-image-alt'></i>
+                <div data-i18n="Slider">Slider</div>
+              </a>
+            </li>
+            
+            <li class="menu-item">
+              <a href="{{route('admin.contact')}}" class="menu-link">
+                <i class='bx bx-phone'></i>
+                <div data-i18n="Contact">Contact</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="{{route('admin.blog')}}" class="menu-link">
+                <i class='bx bx-phone'></i>
+                <div data-i18n="Blog">Blog</div>
+              </a>
+            </li>
+
+
+
+
+
+
           </ul>
         </aside>
         <!-- / Menu -->

@@ -29,12 +29,12 @@
                 </div>
                 <div class="col-lg-9">
                    
-                    <div class="hero__item set-bg" data-setbg="{{asset('/front/img/hero/banner.jpg')}}">
+                    <div class="hero__item set-bg" data-setbg="{{  (!empty($slider->image)? url('upload/slider_images/'.$slider->image):asset('/admin/assets/img/avatars/1.png')  )}}">
                         <div class="hero__text">
                             <span>FRUIT FRESH</span>
                             <h2>Vegetable <br />100% Organic</h2>
                             <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
+                            <a href="{{ $slider->alt }}" class="primary-btn">SHOP NOW</a>
                         </div>
                     </div>
                 </div>

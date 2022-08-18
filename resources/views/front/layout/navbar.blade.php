@@ -41,15 +41,19 @@
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header__top__right__social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+            @if($contact->fb_link !== null)
+                            <a href="{{ $contact->fb_link }}"><i class="fa fa-facebook"></i></a>
+                            @endif
+                            @if($contact->insta_link !== null)
+                            <a href="{{ $contact->insta_link }}"><i class="fa fa-instagram"></i></a>
+                            @endif
+                            @if($contact->wp_link !== null)
+                            <a href="{{ $contact->wp_link }}"><i class="fa fa-whatsapp"></i></a>
+                            @endif
         </div>
         <div class="humberger__menu__contact">
             <ul>
-                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                <li>Free Shipping for all Order of $99</li>
+                <li><i class="fa fa-envelope"></i>{{ $contact->email }}</li>
             </ul>
         </div>
     </div>
@@ -63,18 +67,22 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                                <li>Free Shipping for all Order of $99</li>
+                                <li><i class="fa fa-envelope"></i> {{ $contact->email }}</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
                             <div class="header__top__right__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                                @if($contact->fb_link !== null)
+                            <a href="{{ $contact->fb_link }}"><i class="fa fa-facebook"></i></a>
+                            @endif
+                            @if($contact->insta_link !== null)
+                            <a href="{{ $contact->insta_link }}"><i class="fa fa-instagram"></i></a>
+                            @endif
+                            @if($contact->wp_link !== null)
+                            <a href="{{ $contact->wp_link }}"><i class="fa fa-whatsapp"></i></a>
+                            @endif
                             </div>
                             <div class="header__top__right__language">
                                 <img src="img/language.png" alt="">

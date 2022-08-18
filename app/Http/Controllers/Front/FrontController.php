@@ -2,15 +2,25 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Http\Controllers\Controller;
+use App\Models\Slider;
+use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class FrontController extends Controller
 {
+    public function __construct()
+    {
+        $contact = Contact::first();
+        \View::share('contact', $contact);
+       
+    }
     public function index(){
-        return view('front.page.index');
+        $slider = Slider::first();
+        return view('front.page.index',compact('slider'));
     }
     public function contact(){
+      
         return view('front.page.contact');
     }
     public function blog(){
