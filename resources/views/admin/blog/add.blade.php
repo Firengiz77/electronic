@@ -15,12 +15,11 @@
         <!-- Basic with Icons -->
         <div class="col-lg-12">
           <div class="card mb-4">
-            <div class="card-header d-flex align-items-center justify-content-between">
+            <div class="card-header d-flex align-items-center justify-content-between" style="display: flex;align-items: baseline;flex-direction: row;justify-content: space-between;">
               <h5 class="mb-0">Add Blog</h5>
               <div class="lang">
                 <a href="az" class="btn btn-success {{ app()->isLocale('az') ? 'active' : '' }}">Az</a>
                 <a href="en" class="btn btn-success {{ app()->isLocale('en') ? 'active' : '' }}">En</a>
-                <a href="ru" class="btn btn-success {{ app()->isLocale('ru') ? 'active' : '' }}">Ru</a>
             </div>
             </div>
             <div class="card-body">
@@ -53,7 +52,14 @@
                         ><i class="bx bx-phone"></i
                       ></span>
                       <input type="hidden" name="name" value='{"az":"","en":""}'>
-                          <textarea required class="form-control" ></textarea>
+                      <input
+                      type="text"
+                      name="title"
+                      id="basic-icon-default-company"
+                      class="form-control"
+                      placeholder="Name"
+                      aria-describedby="basic-icon-default-company2"
+                    />
                     </div>
                   </div>
                 </div>
@@ -87,7 +93,6 @@
                         id="basic-icon-default-email"
                         class="form-control"
                         placeholder="Desc"
-                  
                         aria-describedby="basic-icon-default-email2"
                       />
                     </div>
@@ -106,7 +111,6 @@
                         id="basic-icon-default-phone"
                         class="form-control phone-mask"
                         placeholder="Author"
-                     
                         aria-describedby="basic-icon-default-phone2"
                       />
                     </div>
@@ -152,4 +156,7 @@
 
 <script src="{{ asset('/admin/js/file-upload.js') }}"></script>
 <script src="{{ asset('/admin/js/translate.js') }}"></script>
+<script src="{{ asset('/admin/vendors/ckeditor.js') }}"></script>
+<script src="{{ asset('/admin/js/cketditor.js') }}"></script>
+<script src="{{ asset('/admin/js/swal.js') }}"></script>
 @endsection

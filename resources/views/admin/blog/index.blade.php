@@ -6,9 +6,11 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
+            <div style="display: flex;align-items: baseline;flex-direction: row;justify-content: space-between;">
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Admin /</span> Blog</h4>
-              <a href="{{ route('admin.blogs_add') }}"> Add Blog </a>
+              <a class="btn btn-success" href="{{ route('admin.blogs_add') }}"> Add Blog </a>
 
+          </div>
               <!-- Basic Bootstrap Table -->
               <div class="card">
                 <h5 class="card-header">All Blog</h5>

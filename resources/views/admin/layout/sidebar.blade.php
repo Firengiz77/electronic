@@ -74,7 +74,7 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item active">
+            <li class="menu-item @if(Route::is('admin.index')) active @endif">
               <a href="{{route('admin.index')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
@@ -82,7 +82,7 @@
             </li>
 
 
-            <li class="menu-item">
+            <li class="menu-item @if(Route::is('admin.account') || Route::is('admin.register')) active @endif">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account Settings">Account Settings</div>
@@ -101,23 +101,29 @@
               </ul>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item @if(Route::is('admin.slider')) active @endif">
               <a href="{{route('admin.slider')}}" class="menu-link">
-                <i class='bx bx-image-alt'></i>
+                <i class='bx bx-image-alt menu-icon'></i>
                 <div data-i18n="Slider">Slider</div>
               </a>
             </li>
             
-            <li class="menu-item">
+            <li class="menu-item @if(Route::is('admin.contact')) active @endif">
               <a href="{{route('admin.contact')}}" class="menu-link">
-                <i class='bx bx-phone'></i>
+                <i class='bx bx-phone menu-icon'></i>
                 <div data-i18n="Contact">Contact</div>
               </a>
             </li>
-            <li class="menu-item">
+            <li class="menu-item @if(Route::is('admin.blog')) active @endif">
               <a href="{{route('admin.blog')}}" class="menu-link">
-                <i class='bx bx-phone'></i>
+                <i class='bx bxl-blogger menu-icon'></i>
                 <div data-i18n="Blog">Blog</div>
+              </a>
+            </li>
+            <li class="menu-item @if(Route::is('admin.message')) active @endif">
+              <a href="{{route('admin.message')}}" class="menu-link">
+                <i class='bx bx-message-rounded-dots menu-icon' ></i>
+                <div data-i18n="Blog">Message</div>
               </a>
             </li>
 

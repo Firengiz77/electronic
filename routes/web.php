@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\MessageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,6 +61,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
    Route::post('/blog/update/{id}',[BlogController::class,'update'])->name('blog_update');
    Route::get('/blog/delete/{id}',[BlogController::class,'destroy'])->name('blog_delete');
  
+ // Message routes
+ Route::get('/messages',[MessageController::class,'index'])->name('message');
+ Route::post('/messages/add',[MessageController::class,'create'])->name('message_add');
+ Route::get('/messages/delete/{id}',[MessageController::class,'destroy'])->name('message_delete');
 
 
 

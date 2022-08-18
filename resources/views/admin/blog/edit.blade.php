@@ -9,14 +9,21 @@
           
 
             <div class="container-xxl flex-grow-1 container-p-y">
-                <div style=" display: flex;align-items: baseline;flex-direction: column-reverse;">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Admin /</span> Slider </h4>
+                <div style="display: flex;align-items: baseline;flex-direction: row;justify-content: space-between;">
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Admin /</span> Blog </h4>
+              <div class="lang">
+                <a href="az" class="btn btn-success {{ app()->isLocale('az') ? 'active' : '' }}">Az</a>
+                <a href="en" class="btn btn-success {{ app()->isLocale('en') ? 'active' : '' }}">En</a>
+            </div>
                 </div>
-          
+             
 
               <!-- Examples -->
               <div class="row mb-5">
-                <div class="col-md-4 col-lg-2 mb-3 card-body" style="border:1px solid #a1acb8;border-radius:8px">
+
+              
+
+                <div class="col-md-4 col-lg-2 mb-3 card-body">
                     @if(session()->has('message'))
                       <div class="alert alert-success">
                           {{ session()->get('message') }}
@@ -24,15 +31,12 @@
                   @endif
                     <form enctype="multipart/form-data" id="formAccountSettings" method="POST" action="{{ route('admin.blog_update',$blog->id) }}">
                         @csrf
-                         <div class="d-flex align-items-start align-items-sm-center gap-4">
-                       
-                             <div class="button-wrapper">
                                 <img
-                                src="{{  (!empty($blog->image)? url('upload/slider_images/'.$blog->image):asset('/admin/assets/img/avatars/1.png')  )}}"
+                                src="{{  (!empty($blog->image)? url('upload/blog_images/'.$blog->image):asset('/admin/assets/img/avatars/1.png')  )}}"
                                 alt="user-avatar"
                                 class="d-block rounded"
-                                height="100"
-                                width="100"
+                                height="150"
+                                width="150"
                                 id="uploadedAvatar"
                               />
     
@@ -49,51 +53,48 @@
                                  />
                                </label>
 
-                               <div class="mb-3 col-md-6">
+                               <div class="mb-3 col-md-12 translate">
                                 <label for="alt" class="form-label">Name</label>
+                                  <input type="hidden" name="name" value="{{ $blog->name }}">
+                              
                                 <input
                                   class="form-control"
                                   type="text"
                                   id="alt"
-                                  name="alt"
-                                  value="{{ $blog->alt }}"
-                                  placeholder="{{ $blog->name }}"
+                                  placeholder="{!! json_decode($blog['name'])->{app()->getLocale()} !!}"
                                 />
                               </div>
-                              <div class="mb-3 col-md-6">
-                                <label for="alt" class="form-label">Title</label>
+                              <div class="mb-3 col-md-12 translate">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="hidden" name="title" value="{{ $blog->title }}">
                                 <input
                                   class="form-control"
                                   type="text"
-                                  id="alt"
-                                  name="alt"
-                                  value="{{ $blog->title }}"
-                                  placeholder="{{ $blog->title }}"
+                                  id="title"
+                                  placeholder="{!! json_decode($blog['name'])->{app()->getLocale()} !!}"
                                 />
                               </div>
-                              <div class="mb-3 col-md-6">
-                                <label for="alt" class="form-label">Desc</label>
+                              <div class="mb-3 col-md-12 translate">
+                                <label for="desc" class="form-label">Desc</label>
+                                <input type="hidden" name="desc" value="{{ $blog->desc }}">
                                 <input
                                   class="form-control"
                                   type="text"
-                                  id="alt"
-                                  name="alt"
-                                  value="{{ $blog->desc }}"
-                                  placeholder="{{ $blog->desc }}"
+                                  id="desc"
+                                  placeholder="{!! json_decode($blog['name'])->{app()->getLocale()} !!}"
                                 />
                               </div>
-                              <div class="mb-3 col-md-6">
-                                <label for="alt" class="form-label">Author</label>
+                              <div class="mb-3 col-md-12 translate">
+                                <label for="author" class="form-label">Author</label>
+                                <input type="hidden" name="author" value="{{ $blog->desc }}">
                                 <input
                                   class="form-control"
                                   type="text"
-                                  id="alt"
-                                  name="alt"
-                                  value="{{ $blog->author }}"
-                                  placeholder="{{ $blog->author }}"
+                                  id="author"
+                                  placeholder="{!! json_decode($blog['name'])->{app()->getLocale()} !!}"
                                 />
                               </div>
-                              <div class="mb-3 col-md-6">
+                              <div class="mb-3 col-md-12">
                                 <label for="alt" class="form-label">Slug</label>
                                 <input
                                   class="form-control"
@@ -126,15 +127,11 @@
             <div class="content-backdrop fade"></div>
           </div>
           <!-- Content wrapper -->
-        </div>
-        <!-- / Layout page -->
-      </div>
-
-      <!-- Overlay -->
-      <div class="layout-overlay layout-menu-toggle"></div>
-    </div>
-    <!-- / Layout wrapper -->
+        
 
 
+
+<script src="{{ asset('/admin/js/file-upload.js') }}"></script>
+<script src="{{ asset('/admin/js/translate.js') }}"></script>
     
 @endsection

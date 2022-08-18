@@ -315,7 +315,7 @@
                   </div>
                 </div>
               </form>
-              <a href="{{ route('admin.contact_delete',$contact->id) }}" >  <button class="btn btn-danger">Delete Contact</button></a>
+              <a style="display: flex;flex-direction: row;justify-content: end;" href="{{ route('admin.contact_delete',$contact->id) }}" >  <button class="btn btn-danger">Delete Contact</button></a>
             </div>
           </div>
         </div>

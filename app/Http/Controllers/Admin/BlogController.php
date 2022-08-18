@@ -72,9 +72,8 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-      //  $slider = Slider::where('id',$id)->first();
       $blog =  $this->crud->edit('App\Models\Blog',$id);
-        return view('admin.slider.edit',compact('blog'));
+        return view('admin.blog.edit',compact('blog'));
     }
 
     /**
@@ -96,9 +95,9 @@ class BlogController extends Controller
 
         if ($request->file('image')) {
             $file = $request->file('image');
-            @unlink(public_path('/upload/slider_images/') . $data->image);
+            @unlink(public_path('/upload/blog_images/') . $data->image);
             $filename = date('YmdHi') . $file->getClientOriginalName();
-            $file->move(public_path('/upload/slider_images'), $filename);
+            $file->move(public_path('/upload/blog_images'), $filename);
             $data['image'] = $filename;
         }
 
