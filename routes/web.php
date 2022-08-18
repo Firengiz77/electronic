@@ -19,6 +19,7 @@ use App\Http\Controllers\Front\FrontController;
 
 
 // admin panel's routes
+// new routes
 
 
 Route::prefix('admin')->name('admin.')->group(function () {
