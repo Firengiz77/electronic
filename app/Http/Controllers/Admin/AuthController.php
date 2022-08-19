@@ -19,6 +19,7 @@ class AuthController extends Controller
         $data->save();
         return redirect()->back()->with('message', 'Admin Has Been Changed Already');
     }
+
     public function update_image(Request $request){
         $id = auth()->id();
         $data = User::find($id);
@@ -35,11 +36,11 @@ class AuthController extends Controller
 
     public function admin_password(Request $request)
     {
- 
+
         $id = auth()->id();
- 
+
         $hashedpassword = User::find($id)->password;
- 
+
         if (Hash::check($request->old_password, $hashedpassword)) {
             $admin = User::find($id);
             $admin->password = Hash::make($request->password);
@@ -50,10 +51,10 @@ class AuthController extends Controller
             return redirect()->back()->with('message', 'Password has NOT been changed Successfully');
         }
     }
-    
+
     public function logout()
     {
-        
+
         Auth::logout();
 
         return redirect('admin/login');
@@ -64,23 +65,24 @@ class AuthController extends Controller
                 'email' => 'required',
                 'password' => 'required',
             ]);
-        
+
             $credentials = $request->only('email', 'password');
             if (Auth::attempt($credentials)) {
                 return redirect("admin/index")->with('message', 'Successfully Signed In');
             }
-       
+
             return redirect()->back()->with('message', 'Have A Problem,Please Check Again');
-        
+
     }
-    
+
     public function register(Request $request)
-    {  
+    {
         $request->validate([
             'name' => 'required',
             'email' => 'required|',
             'password' => 'required|min:6',
             'admin_status' => '2',
+            'superadmin'=>'required'
         ]);
 
         User::create([
@@ -88,10 +90,11 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'admin_status' => 2,
+            'superadmin'=>$request->superadmin,
           ]);
 
-          
+
         return redirect()->back()->with('message', 'Successfully Created Admin');
     }
- 
+
 }

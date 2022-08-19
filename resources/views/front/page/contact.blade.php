@@ -85,11 +85,17 @@
                     </div>
                 </div>
             </div>
-            <form action="{{ route('message_add') }}" method="post">
+            @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+            @endif
+
+            <form action="{{ route('admin.message_add') }}" method="post">
                 @csrf
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <input type="text" name="name" placeholder="Your name">
+                            <input type="text" name="name" placeholder="Your name">
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <input type="text" name="email" placeholder="Your Email">

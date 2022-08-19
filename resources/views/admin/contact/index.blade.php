@@ -11,7 +11,7 @@
 
       <!-- Basic Layout & Basic with Icons -->
       <div class="row">
-    
+
         <!-- Basic with Icons -->
         <div class="col-lg-6">
           <div class="card mb-4">
@@ -39,7 +39,7 @@
                         id="basic-icon-default-phone"
                         class="form-control phone-mask"
                         placeholder="994 070 888 4581"
-                          name="phone"
+                        name="phone"
                         aria-describedby="basic-icon-default-phone2"
                       />
                     </div>
@@ -162,7 +162,7 @@
 
 
 @foreach ($contacts as $contact )
-    
+
 
 
         <div class="col-lg-6">
@@ -311,7 +311,7 @@
                 <div class="row justify-content-end">
                   <div class="col-sm-10">
                     <button type="submit" class="btn btn-primary">Edit</button>
-                  
+
                   </div>
                 </div>
               </form>
@@ -330,5 +330,5 @@
     <!-- / Content -->
 
 
-    
+
 @endsection

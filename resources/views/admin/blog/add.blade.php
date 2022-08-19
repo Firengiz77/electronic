@@ -11,7 +11,7 @@
 
       <!-- Basic Layout & Basic with Icons -->
       <div class="row">
-    
+
         <!-- Basic with Icons -->
         <div class="col-lg-12">
           <div class="card mb-4">
@@ -54,7 +54,7 @@
                       <input type="hidden" name="name" value='{"az":"","en":""}'>
                       <input
                       type="text"
-                      name="title"
+
                       id="basic-icon-default-company"
                       class="form-control"
                       placeholder="Name"
@@ -73,7 +73,7 @@
                       <input type="hidden" name="title" value='{"az":"","en":""}'>
                       <input
                         type="text"
-                        name="title"
+
                         id="basic-icon-default-company"
                         class="form-control"
                         placeholder="Title"
@@ -136,13 +136,13 @@
                     </div>
                   </div>
                 </div>
-             
+
                 <div class="row justify-content-end">
                   <div class="col-sm-10">
                     <button type="submit" class="btn btn-primary">Add</button>
                   </div>
                 </div>
-          
+
               </form>
             </div>
           </div>

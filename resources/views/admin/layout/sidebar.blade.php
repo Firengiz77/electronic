@@ -98,6 +98,17 @@
                     <div data-i18n="Notifications">Add Admin</div>
                   </a>
                 </li>
+                  @php
+                      $id=auth()->id();
+                      $admin=App\Models\User::find($id);
+                  @endphp
+                  @if($admin->superadmin === '1')
+                  <li class="menu-item">
+                      <a href="{{route('admin.all_admin')}}" class="menu-link">
+                          <div data-i18n="Notifications">All Admin</div>
+                      </a>
+                  </li>
+                      @endif
               </ul>
             </li>
 
@@ -107,7 +118,7 @@
                 <div data-i18n="Slider">Slider</div>
               </a>
             </li>
-            
+
             <li class="menu-item @if(Route::is('admin.contact')) active @endif">
               <a href="{{route('admin.contact')}}" class="menu-link">
                 <i class='bx bx-phone menu-icon'></i>
@@ -138,4 +149,3 @@
 
         <!-- Layout container -->
         <div class="layout-page">
-        

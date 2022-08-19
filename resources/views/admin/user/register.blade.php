@@ -37,8 +37,8 @@
       rel="stylesheet"
     />
 
-    
-   
+
+
     <!-- Page CSS -->
     <!-- Page -->
     <link rel="stylesheet" href="{{asset('/admin/assets/vendor/css/pages/page-auth.css')}}" />
@@ -123,7 +123,7 @@
               <!-- /Logo -->
               <h4 class="mb-2">Adventure starts here 🚀</h4>
               <p class="mb-4">Register and Enjoy</p>
-              
+
               @if(session()->has('message'))
                 <div class="alert alert-success">
                     {{ session()->get('message') }}
@@ -131,7 +131,7 @@
             @endif
 
               <form id="formAuthentication" class="mb-3" action="{{route('admin.admin-register')}}" method="POST">
-              @csrf 
+              @csrf
               <div class="mb-3">
                   <label for="username" class="form-label">Username</label>
                   <input
@@ -162,8 +162,38 @@
                   </div>
                 </div>
 
+                  <div class="card-body">
+                      <div class="row gy-3">
+                          <div class="col-md">
+                              <label class="text-light fw-semibold d-block">Select :</label>
+                              <div class="form-check form-check-inline mt-3">
+                                  <input
+                                      class="form-check-input"
+                                      type="radio"
+                                      name="superadmin"
+                                      id="inlineRadio1"
+                                      value="1"
+                                  />
+                                  <label class="form-check-label" for="inlineRadio1">Super Admin</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                  <input
+                                      class="form-check-input"
+                                      type="radio"
+                                      name="superadmin"
+                                      id="inlineRadio2"
+                                      value="2"
+                                  />
+                                  <label class="form-check-label" for="inlineRadio2">Admin</label>
+                              </div>
+                          </div>
+
+                      </div>
+                  </div>
+
+
                 <div class="mb-3">
-                
+
                 <button class="btn btn-primary d-grid w-100" type="submit">Sign up</button>
               </form>
 

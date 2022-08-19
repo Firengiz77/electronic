@@ -6,7 +6,7 @@
           <!-- Content wrapper -->
           <div class="content-wrapper">
             <!-- Content -->
-          
+
 
             <div class="container-xxl flex-grow-1 container-p-y">
                 <div style="display: flex;align-items: baseline;flex-direction: row;justify-content: space-between;">
@@ -16,12 +16,12 @@
                 <a href="en" class="btn btn-success {{ app()->isLocale('en') ? 'active' : '' }}">En</a>
             </div>
                 </div>
-             
+
 
               <!-- Examples -->
               <div class="row mb-5">
 
-              
+
 
                 <div class="col-md-4 col-lg-2 mb-3 card-body">
                     @if(session()->has('message'))
@@ -39,7 +39,7 @@
                                 width="150"
                                 id="uploadedAvatar"
                               />
-    
+
                                <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0" style="margin-top:16px">
                                  <span class="d-none d-sm-block">Upload new photo</span>
                                  <i class="bx bx-upload d-block d-sm-none"></i>
@@ -56,7 +56,7 @@
                                <div class="mb-3 col-md-12 translate">
                                 <label for="alt" class="form-label">Name</label>
                                   <input type="hidden" name="name" value="{{ $blog->name }}">
-                              
+
                                 <input
                                   class="form-control"
                                   type="text"
@@ -100,7 +100,7 @@
                                   class="form-control"
                                   type="text"
                                   id="alt"
-                                  name="alt"
+                                  name="slug"
                                   value="{{ $blog->slug }}"
                                   placeholder="{{ $blog->slug }}"
                                 />
@@ -110,7 +110,7 @@
                                  <i class="bx bx-reset d-block d-sm-none"></i>
                                  <span class="d-none d-sm-block">Edit</span>
                                </button>
-     
+
                                <p class="text-muted mb-0">Allowed JPG, GIF, JPEG, SVG or PNG. Max size of 150K</p>
                              </div>
                            </div>
@@ -127,11 +127,11 @@
             <div class="content-backdrop fade"></div>
           </div>
           <!-- Content wrapper -->
-        
+
 
 
 
 <script src="{{ asset('/admin/js/file-upload.js') }}"></script>
 <script src="{{ asset('/admin/js/translate.js') }}"></script>
-    
+
 @endsection

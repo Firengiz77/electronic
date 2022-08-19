@@ -40,7 +40,7 @@ class MessageController extends Controller
     public function create(StoreMessageRequest $request)
     {
         $this->crud->create('App\Models\Message',$request);
-        return redirect()->route('admin.contact')->with('message','Messages Has Been Sended');
+        return redirect()->route('front.contact')->with('message','Messages Has Been Sended');
     }
 
     /**
@@ -98,7 +98,7 @@ class MessageController extends Controller
     {
 
         $this->crud->delete('App\Models\Message',$id);
-        return redirect()->route('front.contact')->with('message','Message has been deleted successfully');
-        
+        return redirect()->route('admin.contact')->with('message','Message has been deleted successfully');
+
     }
 }

@@ -32,6 +32,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/login',function(){ return view('admin.user.login');})->name('login');
     Route::get('/register',function(){return view('admin.user.register'); })->name('register');
     Route::get('/account',[AdminController::class,'account'])->name('account');
+    Route::get('/all_admin',[AdminController::class,'all_admin'])->name('all_admin');
     Route::post('/admin-register',[AuthController::class,'register'])->name('admin-register');
     Route::post('/admin-login',[AuthController::class,'login'])->name('admin-login');
     Route::get('/admin-logout',[AuthController::class,'logout'])->name('logout');
