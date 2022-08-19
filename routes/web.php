@@ -60,7 +60,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
    Route::post('/blog/add',[BlogController::class,'create'])->name('blog_add');
    Route::post('/blog/update/{id}',[BlogController::class,'update'])->name('blog_update');
    Route::get('/blog/delete/{id}',[BlogController::class,'destroy'])->name('blog_delete');
- 
+
  // Message routes
  Route::get('/messages',[MessageController::class,'index'])->name('message');
  Route::post('/messages/add',[MessageController::class,'create'])->name('message_add');
@@ -68,7 +68,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
 
-
+/* new routes */
 
 
 });
