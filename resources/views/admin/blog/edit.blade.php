@@ -71,27 +71,25 @@
                                   class="form-control"
                                   type="text"
                                   id="title"
-                                  placeholder="{!! json_decode($blog['name'])->{app()->getLocale()} !!}"
+                                  placeholder="{!! json_decode($blog['title'])->{app()->getLocale()} !!}"
                                 />
                               </div>
-                              <div class="mb-3 col-md-12 translate">
+                              <div class="mb-3 col-md-12 form-group translate">
                                 <label for="desc" class="form-label">Desc</label>
                                 <input type="hidden" name="desc" value="{{ $blog->desc }}">
-                                <input
-                                  class="form-control"
-                                  type="text"
-                                  id="desc"
-                                  placeholder="{!! json_decode($blog['name'])->{app()->getLocale()} !!}"
-                                />
+                                <textarea
+                                  class="form-control" 
+                                  id="editor"
+                                  >{!! json_decode($blog['desc'])->{app()->getLocale()} !!} </textarea>
                               </div>
                               <div class="mb-3 col-md-12 translate">
                                 <label for="author" class="form-label">Author</label>
-                                <input type="hidden" name="author" value="{{ $blog->desc }}">
+                                <input type="hidden" name="author" value="{{ $blog->author }}">
                                 <input
                                   class="form-control"
                                   type="text"
                                   id="author"
-                                  placeholder="{!! json_decode($blog['name'])->{app()->getLocale()} !!}"
+                                  placeholder="{!! json_decode($blog['author'])->{app()->getLocale()} !!}"
                                 />
                               </div>
                               <div class="mb-3 col-md-12">
@@ -126,10 +124,10 @@
 
             <div class="content-backdrop fade"></div>
           </div>
+
           <!-- Content wrapper -->
 
-
-
+          
 
 <script src="{{ asset('/admin/js/file-upload.js') }}"></script>
 <script src="{{ asset('/admin/js/translate.js') }}"></script>

@@ -9,10 +9,17 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script src="{{ asset('/admin/assets/vendor/libs/jquery/jquery.js')}}"></script>
     <script src="{{asset('/admin/assets/vendor/libs/popper/popper.js')}}"></script>
     <script src="{{asset('/admin/assets/vendor/js/bootstrap.js')}}"></script>
     <script src="{{asset('/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
+
+    <script src="{{ asset('/admin/vendors/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('/admin/assets/js/cketditor.js') }}"></script>
 
     <script src="{{asset('/admin/assets/vendor/js/menu.js')}}"></script>
     <!-- endbuild -->

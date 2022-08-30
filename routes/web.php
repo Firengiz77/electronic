@@ -84,6 +84,6 @@ Route::name('front.')->group(function () {
     Route::get('/contact',[FrontController::class,'contact'])->name('contact');
     Route::get('/blog',[FrontController::class,'blog'])->name('blog');
     Route::get('/shop',[FrontController::class,'shop'])->name('shop');
-
+    Route::get('/blog_single/{slug}',[FrontController::class,'blog_single'])->name('blog_single');
 });
 
