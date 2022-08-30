@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1:3307
--- Üretim Zamanı: 19 Ağu 2022, 11:58:12
+-- Üretim Zamanı: 30 Ağu 2022, 14:56:55
 -- Sunucu sürümü: 10.4.22-MariaDB
 -- PHP Sürümü: 8.1.1
 
@@ -44,9 +44,9 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `image`, `name`, `title`, `desc`, `slug`, `author`, `created_at`, `updated_at`) VALUES
-(2, '2022081908272.jpg', '{\"az\":\"Blog 2\",\"en\":\"Blog 2\"}', '{\"az\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum \",\"en\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum \"}', '{\"az\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum \",\"en\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum \"}', 'blog_1', '{\"az\":\"Firengiz\",\"en\":\"Firengiz\"}', '2022-08-19 04:27:41', '2022-08-19 04:27:41'),
-(3, '2022081908282.jpg', '{\"az\":\"What is Lorem Ipsum?\",\"en\":\"What is Lorem Ipsum?\"}', '{\"az\":\"What is Lorem Ipsum?\",\"en\":\"What is Lorem Ipsum?\"}', '{\"az\":\"What is Lorem Ipsum?\",\"en\":\"What is Lorem Ipsum?\"}', 'What is Lorem Ipsum?', '{\"az\":\"What is Lorem Ipsum?\",\"en\":\"What is Lorem Ipsum?\"}', '2022-08-19 04:28:33', '2022-08-19 04:28:33'),
-(4, '2022081908304.jpg', '{\"az\":\"Why do we use it?\",\"en\":\"Why do we use it?\"}', '{\"az\":\"Why do we use it?\",\"en\":\"Why do we use it?\"}', '{\"az\":\"Why do we use it?\",\"en\":\"Why do we use it?\"}', 'Why do we use it?', '{\"az\":\"Why do we use it?\",\"en\":\"Why do we use it?\"}', '2022-08-19 04:30:14', '2022-08-19 04:30:14');
+(2, '2022081908272.jpg', '{\"az\":\"Blog 2 az\",\"en\":\"Blog 2 en\"}', '{\"az\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum  az\",\"en\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum  en\"}', '{\"az\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum \",\"en\":\"Blog 2 en az\"}', 'blog_1', '{\"az\":\"Firengiz az\",\"en\":\"Firengiz en\"}', '2022-08-19 04:27:41', '2022-08-30 08:07:21'),
+(3, '2022081908282.jpg', '{\"az\":\"What is Lorem Ipsum? az\",\"en\":\"Why do we use it? en\"}', '{\"az\":\"What is Lorem Ipsum? az\",\"en\":\"What is Lorem Ipsum? en\"}', '{\"az\":\"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.\",\"en\":\"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.\"}', 'blog_3', '{\"az\":\"Joseff B.\",\"en\":\"Joseff B.\"}', '2022-08-19 04:28:33', '2022-08-30 07:01:09'),
+(4, '2022081908304.jpg', '{\"az\":\"Why do we use it? az\",\"en\":\"Why do we use it? en\"}', '{\"az\":\"Why do we use it?az\",\"en\":\"Why do we use it? en\"}', '{\"az\":\"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.\",\"en\":\"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.\"}', 'blog_4', '{\"az\":\"Jeff\",\"en\":\"Jeff\"}', '2022-08-19 04:30:14', '2022-08-30 07:00:50');
 
 -- --------------------------------------------------------
 
