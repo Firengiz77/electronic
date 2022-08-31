@@ -87,3 +87,5 @@ Route::name('front.')->group(function () {
     Route::get('/blog_single/{slug}',[FrontController::class,'blog_single'])->name('blog_single');
 });
 
+
+// new routes
