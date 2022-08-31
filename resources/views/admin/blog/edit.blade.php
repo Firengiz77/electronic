@@ -11,6 +11,7 @@
             <div class="container-xxl flex-grow-1 container-p-y">
                 <div style="display: flex;align-items: baseline;flex-direction: row;justify-content: space-between;">
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Admin /</span> Blog </h4>
+             
               <div class="lang">
                 <a href="az" class="btn btn-success {{ app()->isLocale('az') ? 'active' : '' }}">Az</a>
                 <a href="en" class="btn btn-success {{ app()->isLocale('en') ? 'active' : '' }}">En</a>
@@ -20,8 +21,6 @@
 
               <!-- Examples -->
               <div class="row mb-5">
-
-
 
                 <div class="col-md-4 col-lg-2 mb-3 card-body">
                     @if(session()->has('message'))
@@ -74,13 +73,13 @@
                                   placeholder="{!! json_decode($blog['title'])->{app()->getLocale()} !!}"
                                 />
                               </div>
-                              <div class="mb-3 col-md-12 form-group translate">
-                                <label for="desc" class="form-label">Desc</label>
+                              <div class="mb-3 col-md-12 translate">
+                                <label for="" class="form-label">Desc</label>
                                 <input type="hidden" name="desc" value="{{ $blog->desc }}">
                                 <textarea
                                   class="form-control" 
                                   id="editor"
-                                  >{!! json_decode($blog['desc'])->{app()->getLocale()} !!} </textarea>
+                                  >{{ $blog->translate('desc', app()->getLocale()) }}</textarea>
                               </div>
                               <div class="mb-3 col-md-12 translate">
                                 <label for="author" class="form-label">Author</label>
@@ -126,10 +125,10 @@
           </div>
 
           <!-- Content wrapper -->
-
-          
-
+    
 <script src="{{ asset('/admin/js/file-upload.js') }}"></script>
 <script src="{{ asset('/admin/js/translate.js') }}"></script>
+<script src="{{ asset('/admin/vendors/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('/admin/assets/js/cketditor.js') }}"></script>
 
 @endsection

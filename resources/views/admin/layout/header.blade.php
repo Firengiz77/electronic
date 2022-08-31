@@ -44,8 +44,6 @@
     <link rel="stylesheet" href="{{asset('/admin/assets/vendor/libs/apex-charts/apex-charts.css')}}" />
 
 
-      {{-- CKEditor CDN --}}
-  <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
 
   
     <!-- Page CSS -->
