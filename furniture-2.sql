@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Anamakine: 127.0.0.1:3307
--- Üretim Zamanı: 30 Ağu 2022, 14:56:55
--- Sunucu sürümü: 10.4.22-MariaDB
--- PHP Sürümü: 8.1.1
+-- Host: localhost
+-- Generation Time: Aug 31, 2022 at 02:58 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Veritabanı: `furniture`
+-- Database: `furniture`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `blogs`
+-- Table structure for table `blogs`
 --
 
 CREATE TABLE `blogs` (
@@ -40,18 +40,18 @@ CREATE TABLE `blogs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `blogs`
+-- Dumping data for table `blogs`
 --
 
 INSERT INTO `blogs` (`id`, `image`, `name`, `title`, `desc`, `slug`, `author`, `created_at`, `updated_at`) VALUES
-(2, '2022081908272.jpg', '{\"az\":\"Blog 2 az\",\"en\":\"Blog 2 en\"}', '{\"az\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum  az\",\"en\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum  en\"}', '{\"az\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum \",\"en\":\"Blog 2 en az\"}', 'blog_1', '{\"az\":\"Firengiz az\",\"en\":\"Firengiz en\"}', '2022-08-19 04:27:41', '2022-08-30 08:07:21'),
+(2, '2022081908272.jpg', '{\"az\":\"Blog 2 az\",\"en\":\"Blog 2 en\"}', '{\"az\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum  az\",\"en\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum  en\"}', '{\"az\":\"<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum</p>\\n\",\"en\":\"<p>Blog 2<strong> en az</strong></p>\\n\"}', 'blog_1', '{\"az\":\"Firengiz az\",\"en\":\"Firengiz en\"}', '2022-08-19 04:27:41', '2022-08-31 06:33:31'),
 (3, '2022081908282.jpg', '{\"az\":\"What is Lorem Ipsum? az\",\"en\":\"Why do we use it? en\"}', '{\"az\":\"What is Lorem Ipsum? az\",\"en\":\"What is Lorem Ipsum? en\"}', '{\"az\":\"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.\",\"en\":\"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.\"}', 'blog_3', '{\"az\":\"Joseff B.\",\"en\":\"Joseff B.\"}', '2022-08-19 04:28:33', '2022-08-30 07:01:09'),
 (4, '2022081908304.jpg', '{\"az\":\"Why do we use it? az\",\"en\":\"Why do we use it? en\"}', '{\"az\":\"Why do we use it?az\",\"en\":\"Why do we use it? en\"}', '{\"az\":\"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.\",\"en\":\"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.\"}', 'blog_4', '{\"az\":\"Jeff\",\"en\":\"Jeff\"}', '2022-08-19 04:30:14', '2022-08-30 07:00:50');
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `contacts`
+-- Table structure for table `contacts`
 --
 
 CREATE TABLE `contacts` (
@@ -68,7 +68,7 @@ CREATE TABLE `contacts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `contacts`
+-- Dumping data for table `contacts`
 --
 
 INSERT INTO `contacts` (`id`, `phone`, `open_time`, `address`, `email`, `fb_link`, `wp_link`, `insta_link`, `created_at`, `updated_at`) VALUES
@@ -77,7 +77,7 @@ INSERT INTO `contacts` (`id`, `phone`, `open_time`, `address`, `email`, `fb_link
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -93,7 +93,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `messages`
+-- Table structure for table `messages`
 --
 
 CREATE TABLE `messages` (
@@ -106,7 +106,7 @@ CREATE TABLE `messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `messages`
+-- Dumping data for table `messages`
 --
 
 INSERT INTO `messages` (`id`, `name`, `email`, `message`, `created_at`, `updated_at`) VALUES
@@ -115,7 +115,7 @@ INSERT INTO `messages` (`id`, `name`, `email`, `message`, `created_at`, `updated
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -125,7 +125,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -141,7 +141,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -153,7 +153,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `personal_access_tokens`
+-- Table structure for table `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -172,7 +172,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `sliders`
+-- Table structure for table `sliders`
 --
 
 CREATE TABLE `sliders` (
@@ -184,7 +184,7 @@ CREATE TABLE `sliders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `sliders`
+-- Dumping data for table `sliders`
 --
 
 INSERT INTO `sliders` (`id`, `image`, `alt`, `created_at`, `updated_at`) VALUES
@@ -193,7 +193,7 @@ INSERT INTO `sliders` (`id`, `image`, `alt`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -211,57 +211,58 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `admin_status`, `image`, `superadmin`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Firengiz', 'firengizsariyeva77@gmail.com', 1, '2022081711206.png', '1', NULL, '$2y$10$zaqRZO3V4T2fDDE7PRASh.pWWvPhJKDmMr3CwXVa3mJIrHolxw//K', NULL, '2022-08-17 04:53:45', '2022-08-17 08:51:56'),
 (2, 'Firengiz2', 'firengizsariyeva772@gmail.com', 1, NULL, '1', NULL, '$2y$10$MRSOThO2QDKWKoCyh3gOtOqAcuiphMDM9xDxHvowBS.YtX2GbG5lK', NULL, '2022-08-17 04:55:03', '2022-08-17 04:55:03'),
-(3, 'firengiz79', 'firengizsariyeva79@gmail.com', 1, NULL, '2', NULL, '$2y$10$5dr6ESMJWbIKcGFy0dECFeLyTpRzECVTOP3WIn85YP0bcYShFNoq6', NULL, '2022-08-19 04:13:40', '2022-08-19 04:13:40');
+(3, 'firengiz79', 'firengizsariyeva79@gmail.com', 1, NULL, '2', NULL, '$2y$10$5dr6ESMJWbIKcGFy0dECFeLyTpRzECVTOP3WIn85YP0bcYShFNoq6', NULL, '2022-08-19 04:13:40', '2022-08-19 04:13:40'),
+(4, 'Firengiz user', 'fuser@gmail.com', 1, '202208311224blog-5.jpg', '3', NULL, '$2y$10$hPLeU1rLPYE7juobgvxPMOMY66rXmomMeQoKdNL99PTp.C9leWcO2', NULL, '2022-08-31 06:52:26', '2022-08-31 08:50:49');
 
 --
--- Dökümü yapılmış tablolar için indeksler
+-- Indexes for dumped tables
 --
 
 --
--- Tablo için indeksler `blogs`
+-- Indexes for table `blogs`
 --
 ALTER TABLE `blogs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `contacts`
+-- Indexes for table `contacts`
 --
 ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Tablo için indeksler `messages`
+-- Indexes for table `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Tablo için indeksler `personal_access_tokens`
+-- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -269,69 +270,69 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Tablo için indeksler `sliders`
+-- Indexes for table `sliders`
 --
 ALTER TABLE `sliders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Tablo için AUTO_INCREMENT değeri `blogs`
+-- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Tablo için AUTO_INCREMENT değeri `contacts`
+-- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Tablo için AUTO_INCREMENT değeri `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `messages`
+-- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Tablo için AUTO_INCREMENT değeri `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- Tablo için AUTO_INCREMENT değeri `personal_access_tokens`
+-- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `sliders`
+-- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- Tablo için AUTO_INCREMENT değeri `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
