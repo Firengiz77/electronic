@@ -8,6 +8,9 @@ use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\MessageController;
+use App\Http\Controllers\Front\UserController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +38,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/all_admin',[AdminController::class,'all_admin'])->name('all_admin');
     Route::post('/admin-register',[AuthController::class,'register'])->name('admin-register');
     Route::post('/admin-login',[AuthController::class,'login'])->name('admin-login');
-    Route::get('/admin-logout',[AuthController::class,'logout'])->name('logout');
     Route::get('/admin-logout',[AuthController::class,'logout'])->name('logout');
     Route::post('/admin-image',[AuthController::class,'update_image'])->name('update_image');
     Route::post('/admin-update',[AuthController::class,'admin_update'])->name('update');
@@ -88,4 +90,16 @@ Route::name('front.')->group(function () {
 });
 
 
-// new routes
+// user routes
+
+Route::name('user.')->group(function () {
+      Route::get('/register',[UserController::class,'index'])->name('index');
+      Route::get('/dashboard',[UserController::class,'dashboard'])->name('dashboard');
+      Route::post('/register1',[UserController::class,'register'])->name('register');
+      Route::get('/login',[UserController::class,'login_index'])->name('login_index');
+      Route::post('/login1',[UserController::class,'login'])->name('login');
+      Route::get('/logout',[UserController::class,'logout'])->name('logout');
+      Route::post('/user-image',[UserController::class,'update_image'])->name('update_image');
+      Route::post('/user-update',[UserController::class,'user_update'])->name('update');
+      Route::post('/user-password',[UserController::class,'user_password'])->name('user_password');
+  });
