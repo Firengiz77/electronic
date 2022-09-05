@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductColorController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductSizeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BlogController;
@@ -71,7 +75,33 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
 
-/* new routes */
+//category routes
+    Route::get('/category',[CategoryController::class,'index'])->name('category');
+    Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('category_edit');
+    Route::post('/category/add',[CategoryController::class,'create'])->name('category_add');
+    Route::post('/category/update/{id}',[CategoryController::class,'update'])->name('category_update');
+    Route::get('/category/delete/{id}',[CategoryController::class,'destroy'])->name('category_delete');
+
+    // Product Size routes
+    Route::get('/product_size',[ProductSizeController::class,'index'])->name('product_size');
+    Route::post('/product_size/add',[ProductSizeController::class,'create'])->name('product_size_add');
+    Route::post('/product_size/update/{id}',[ProductSizeController::class,'update'])->name('product_size_update');
+    Route::get('/product_size/delete/{id}',[ProductSizeController::class,'destroy'])->name('product_size_delete');
+
+
+    // Product Color routes
+    Route::get('/product_color',[ProductColorController::class,'index'])->name('product_color');
+    Route::post('/product_color/add',[ProductColorController::class,'create'])->name('product_color_add');
+    Route::post('/product_color/update/{id}',[ProductColorController::class,'update'])->name('product_color_update');
+    Route::get('/product_color/delete/{id}',[ProductColorController::class,'destroy'])->name('product_color_delete');
+
+// Product routes
+    Route::get('/products',[ProductController::class,'index'])->name('products');
+    Route::get('/products/add',[ProductController::class,'show'])->name('products_add');
+    Route::get('/products/edit/{id}',[ProductController::class,'edit'])->name('products_edit');
+    Route::post('/products/add',[ProductController::class,'create'])->name('products_add');
+    Route::post('/products/update/{id}',[ProductController::class,'update'])->name('products_update');
+    Route::get('/products/delete/{id}',[ProductController::class,'destroy'])->name('products_delete');
 
 
 });

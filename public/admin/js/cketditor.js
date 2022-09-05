@@ -7,7 +7,7 @@ CKEDITOR.instances.editor.on('change', function () {
     let langVal = JSON.parse(document.getElementById(this.name).previousElementSibling.value);
     let currentLang = document.querySelector('.lang a.active').getAttribute('href');
     langVal[currentLang] = value;
-    document.getElementById(this.name).previousElementSibling.value = JSON.stringify(langVal); 
+    document.getElementById(this.name).previousElementSibling.value = JSON.stringify(langVal);
 
 });
 
@@ -16,6 +16,6 @@ CKEDITOR.instances.editor1.on('change', function () {
     let langVal = JSON.parse(document.getElementById(this.name).previousElementSibling.value);
     let currentLang = document.querySelector('.lang a.active').getAttribute('href');
     langVal[currentLang] = value;
-    document.getElementById(this.name).previousElementSibling.value = JSON.stringify(langVal); 
+    document.getElementById(this.name).previousElementSibling.value = JSON.stringify(langVal);
 
 });

@@ -112,7 +112,48 @@
               </ul>
             </li>
 
-            <li class="menu-item @if(Route::is('admin.slider')) active @endif">
+              <li class="menu-item @if(Route::is('admin.product_color') || Route::is('admin.product_size')) active @endif">
+                  <a href="javascript:void(0);" class="menu-link menu-toggle">
+                      <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                      <div data-i18n="Account Settings">Product Settings</div>
+                  </a>
+                  <ul class="menu-sub">
+                      <li class="menu-item">
+                          <a href="{{route('admin.product_color')}}" class="menu-link">
+                              <i class='bx bx-palette menu-icon' ></i>
+                              <div data-i18n="Blog">Colors</div>
+                          </a>
+                      </li>
+                      <li class="menu-item">
+                          <a href="{{route('admin.product_size')}}" class="menu-link">
+                              <i class='bx bx-bar-chart menu-icon'></i>
+                              <div data-i18n="Blog">Size</div>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
+
+
+              <li class="menu-item @if(Route::is('admin.category')) active @endif">
+                  <a href="{{route('admin.category')}}" class="menu-link">
+                      <i class='bx bx-aperture menu-icon' ></i>
+                      <div data-i18n="Blog">Category</div>
+                  </a>
+              </li>
+              <li class="menu-item @if(Route::is('admin.products')) active @endif">
+                  <a href="{{route('admin.products')}}" class="menu-link">
+                      <i class='bx bx-purchase-tag-alt menu-icon' ></i>
+                      <div data-i18n="Product">Product</div>
+                  </a>
+              </li>
+
+
+
+
+
+
+
+              <li class="menu-item @if(Route::is('admin.slider')) active @endif">
               <a href="{{route('admin.slider')}}" class="menu-link">
                 <i class='bx bx-image-alt menu-icon'></i>
                 <div data-i18n="Slider">Slider</div>
@@ -131,16 +172,13 @@
                 <div data-i18n="Blog">Blog</div>
               </a>
             </li>
+
             <li class="menu-item @if(Route::is('admin.message')) active @endif">
               <a href="{{route('admin.message')}}" class="menu-link">
                 <i class='bx bx-message-rounded-dots menu-icon' ></i>
                 <div data-i18n="Blog">Message</div>
               </a>
             </li>
-
-
-
-
 
 
           </ul>
