@@ -45,8 +45,8 @@
                                              <label class="col-sm-12 col-form-label" for="basic-icon-default-company">Name</label>
                                              <div class="col-sm-10" >
                                                  <div class="input-group input-group-merge">
-                         <span id="basic-icon-default-company2" class="input-group-text"
-                         ></span>
+                                   <span id="basic-icon-default-company2" class="input-group-text"
+                              ></span>
                                                      <input type="hidden" name="name" value="{{ $category->name }}">
                                                      <input
                                                          type="text"

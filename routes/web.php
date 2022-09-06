@@ -102,7 +102,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/products/add',[ProductController::class,'create'])->name('products_add');
     Route::post('/products/update/{id}',[ProductController::class,'update'])->name('products_update');
     Route::get('/products/delete/{id}',[ProductController::class,'destroy'])->name('products_delete');
-
+    Route::post('/product/delete_images/{id}',[ProductController::class,'delete_images_product'])->name('delete_images_product');
 
 });
 
