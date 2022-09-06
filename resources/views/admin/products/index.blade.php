@@ -38,13 +38,13 @@
                               class="avatar avatar-xs pull-up"
                               title="Blog Image"
                             >
-                              <img src="{{  (!empty($product->thumbnail)? url('upload/product_images/'.$product->thumbnail):asset('/admin/assets/img/avatars/1.png')  )}}"alt="Avatar" class="rounded-circle" />
+                              <img src="{{  (!empty($product->thumbnail)? url('uploads/products/'.$product->thumbnail):asset('/admin/assets/img/avatars/1.png')  )}}"  alt="Avatar" class="rounded-circle" />
                             </li>
 
 
                           </ul>
                         </td>
-                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{!! json_decode($product['slug'])->{app()->getLocale()} !!}</strong></td>
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$product->slug}}</strong></td>
                         <td>
                           <a href="{{ route('admin.products_edit',$product->id) }}" class="btn btn-outline-primary">Edit Product</a>
                           <a href="{{ route('admin.products_delete',$product->id) }}" class="btn btn-outline-danger">Delete Product</a>

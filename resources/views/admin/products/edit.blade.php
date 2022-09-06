@@ -10,7 +10,7 @@
 
             <div class="container-xxl flex-grow-1 container-p-y">
                 <div style="display: flex;align-items: baseline;flex-direction: row;justify-content: space-between;">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Admin /</span> Blog </h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Admin /</span> Product </h4>
 
               <div class="lang">
                 <a href="az" class="btn btn-success {{ app()->isLocale('az') ? 'active' : '' }}">Az</a>
@@ -31,8 +31,8 @@
                     <form enctype="multipart/form-data" id="formAccountSettings" method="POST" action="{{ route('admin.blog_update',$blog->id) }}">
                         @csrf
                                 <img
-                                src="{{  (!empty($blog->image)? url('upload/blog_images/'.$blog->image):asset('/admin/assets/img/avatars/1.png')  )}}"
-                                alt="user-avatar"
+                                    src="{{  (!empty($product->thumbnail)? url('uploads/products/'.$product->thumbnail):asset('/admin/assets/img/avatars/1.png')  )}}"
+                                    alt="user-avatar"
                                 class="d-block rounded"
                                 height="150"
                                 width="150"

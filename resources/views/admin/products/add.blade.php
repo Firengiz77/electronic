@@ -62,7 +62,6 @@
                           @foreach($colors as $color)
                               <option value="{{ $color->id }}" > {!! json_decode($color['name'])->{app()->getLocale()} !!} </option>
                           @endforeach
-
                       </select>
                   </div>
                   <div class="row mb-3">
