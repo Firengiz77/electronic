@@ -59,7 +59,7 @@
 
                         <div class="row mb-3">
                             <div class="form-check form-check-inline mt-3">
-                                <input class="form-check-input" type="checkbox" name="on_stock" id="inlineCheckbox1" value="1">
+                                <input class="form-check-input" type="checkbox" name="on_stock" id="inlineCheckbox1"  @if($product->on_stock === '1')  checked="" @endif  value="1">
                                 <label class="form-check-label" for="inlineCheckbox1">On Stock</label>
                             </div>
                         </div>
