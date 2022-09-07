@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1:3307
--- Üretim Zamanı: 05 Eyl 2022, 15:12:00
+-- Üretim Zamanı: 06 Eyl 2022, 15:09:24
 -- Sunucu sürümü: 10.4.22-MariaDB
 -- PHP Sürümü: 8.1.1
 
@@ -224,7 +224,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `thumbnail`, `images`, `on_stock`, `desc`, `cat_id`, `size_id`, `color_id`, `slug`, `created_at`, `updated_at`) VALUES
-(1, '{\"az\":\"dgfbd\",\"en\":\"sergv\"}', 'sdfvg', 'C:\\xampp\\tmp\\php5485.tmp', '[\"98294873.jpg\",\"29003767.png\",\"17005045.png\",\"1850968345.jpg\",\"1048349935.png\",\"245428238.png\"]', '1', '{\"az\":\"<p>dfgbdfgb</p>\\n\",\"en\":\"<p>dfgbv</p>\\n\"}', '12', '1', '3', 'sdfgv', '2022-09-05 09:10:34', '2022-09-05 09:10:34');
+(3, '{\"az\":\"sdfg\",\"en\":\"sdfg\"}', 'sdfg', '484866037.png', '[\"1272663761.jpg\",\"133904239.png\",\"180895999.png\",\"1012659286.jpg\",\"1153428760.jpg\",\"1183242038.png\",\"1256004276.png\",\"1217811641.jpg\",\"1558123120.jpg\",\"1699564968.png\",\"1104481792.png\",\"984418577.jpg\"]', '1', '{\"az\":\"<p>sdfg azazaz</p>\\n\",\"en\":\"<p>sdfg hgnfgh</p>\\n\"}', '13', '2', '3', 'sdfg', '2022-09-06 06:13:48', '2022-09-06 08:02:29'),
+(4, '{\"az\":\"sdfg\",\"en\":\"ghj\"}', 'fdgh', '902153957.jpg', '{\"1\":\"968444415.png\",\"2\":\"1150882937.png\"}', '1', '{\"az\":\"<p>ghmj</p>\\n\",\"en\":\"<p>ghmj</p>\\n\"}', '12', '1', '3', 'dfg', '2022-09-06 08:37:02', '2022-09-06 08:38:44');
 
 -- --------------------------------------------------------
 
@@ -454,7 +455,7 @@ ALTER TABLE `personal_access_tokens`
 -- Tablo için AUTO_INCREMENT değeri `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `product_sizes`
