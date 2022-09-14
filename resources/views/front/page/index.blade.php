@@ -62,12 +62,12 @@
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a class="btn-addto-cart" href="{{route('front.addtocart',['id'=>$product->id])}}"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="{{ route('front.product_single',['category'=>$product['category']['slug'],'product'=>$product->slug]) }}">{!! json_decode($product['name'])->{app()->getLocale()} !!}</a></h6>
-                            <h5>$ {{$product->price}}</h5>
+                            <h5>$ {{$product->price}} sdsd</h5>
                         </div>
                     </div>
                 </div>
@@ -178,8 +178,6 @@
                 </div>
                 @endforeach
 
-
-
             </div>
         </div>
     </section>
@@ -187,6 +185,6 @@
 
 
 
-
+<script src="{{asset('/admin/js/sort.js')}}"></script>
 
 @endsection

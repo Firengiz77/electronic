@@ -11,6 +11,7 @@ use App\Models\Slider;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class FrontController extends Controller
 {
@@ -20,6 +21,31 @@ class FrontController extends Controller
         \View::share('contact', $contact);
 
     }
+    public function addToCart($id,Request $request)
+    {
+        $product = Product::all()->find($id);
+        $carts = [];
+        $data = Session::get('cart', []);
+
+
+        if (isset($data[$id])) {
+            $data[$id] = [
+                'name' => $product->translate('name', app()->getLocale()),
+                'price' => $product->price,
+                'thumbnail' => $product->thumbnail,
+            ];
+        }
+        Session::put('cart', $data);
+        $carts = $data;
+
+        return view('front.widget.cart')
+            ->with('carts', $carts);
+    }
+
+
+
+
+
     public function index(){
         $slider = Slider::first();
         $blogs = Blog::orderBy('id','asc')->get();
@@ -50,9 +76,7 @@ class FrontController extends Controller
         return view('front.page.product_single',compact('category','related_product','product'));
     }
 
-    public function sort_by(){
 
-    }
 
     public function shop(){
         $categories = Category::orderBy('id','asc')->get();

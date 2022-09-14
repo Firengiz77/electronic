@@ -118,8 +118,7 @@ Route::name('front.')->group(function () {
     Route::get('/shop',[FrontController::class,'shop'])->name('shop');
     Route::get('/blog_single/{slug}',[FrontController::class,'blog_single'])->name('blog_single');
     Route::get('/product/{category}/{product}',[FrontController::class,'product_single'])->name('product_single');
-    Route::get('/sort_by',[FrontController::class,'sort_by'])->name('sort_by');
-
+    Route::get('/add-to-cart/{id}', [FrontController::class, 'addToCart'])->name('addtocart');
 });
 
 

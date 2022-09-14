@@ -110,7 +110,7 @@
                                 <div class="filter__sort">
                                     <span>Sort By</span>
                                     <select>
-                                        <option value="0" id="artan" onclick=""> Qiymət artan</option>
+                                        <option value="0" id="artan" > Qiymət artan</option>
                                         <option value="0" id="azalan">Qiymət azalan</option>
                                     </select>
                                 </div>
