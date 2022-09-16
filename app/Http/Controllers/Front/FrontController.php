@@ -21,6 +21,54 @@ class FrontController extends Controller
         \View::share('contact', $contact);
 
     }
+
+    public function wishlist(){
+        $wishlists = session()->get('wishlist');
+        return view('front.page.wishlist',compact('wishlists'));
+    }
+
+    public function addtowishlist($id)
+    {
+        $product = Product::find($id);
+
+        $cart = session()->get('wishlist', []);
+
+        if (isset($cart[$id])) {
+            $cart[$id]['quantity']++;
+        } else {
+            $cart[$id] = [
+                'id' => $product->id,
+                "name" => $product->name,
+                "quantity" => 1,
+                "price" => $product->price,
+                "thumbnail" => $product->thumbnail,
+            ];
+        }
+
+        session()->put('wishlist', $cart);
+        $cartitems = session()->get('wishlist');
+
+        return $cartitems;
+
+    }
+
+    public function remove_to_wishlist(Request $request){
+        // if ($request->id) {
+        //     $cart = session()->get('wishlist');
+        //    session()->put('cart', $cart);
+        // }
+        $cart = session()->get('wishlist');
+        unset($cart[$request->id]);
+        \Session::put('wishlist', $cart);
+
+        // $cartitems = session()->get('wishlist');
+       // $view = view('front.component.cart', compact('cartitems'));
+
+       // return $view->render();
+       return response()->json(['message'=>'deleted wishlist']);
+    }
+
+
     public function addToCart($id,Request $request)
     {
         $product = Product::all()->find($id);

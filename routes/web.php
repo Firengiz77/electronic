@@ -134,4 +134,8 @@ Route::name('user.')->group(function () {
       Route::post('/user-image',[UserController::class,'update_image'])->name('update_image');
       Route::post('/user-update',[UserController::class,'user_update'])->name('update');
       Route::post('/user-password',[UserController::class,'user_password'])->name('user_password');
+      Route::get('/wishlist',[FrontController::class,'wishlist'])->name('wishlist');
   });
+
+Route::get('/add_to_wishlist/{id}',[FrontController::class,'addtowishlist'])->name('addtowishlist') ; 
+Route::get('/remove_to_wishlist',[FrontController::class,'remove_to_wishlist'])->name('remove_to_wishlist') ; 

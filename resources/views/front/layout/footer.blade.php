@@ -82,7 +82,210 @@
     <script src="{{asset('/front/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('/front/js/main.js')}}"></script>
 
+<script>
 
+    function addIttocart(id) {
+
+        let size        = $('#sizes-cart .active').attr('id');
+        let color       = $('#color').val();
+        let quantity    = $('#quantity').val();
+        let stock_count = $('#stock_count').val();
+        let lang = window.location.href.split('/')[3];
+
+      //      if(quantity > stock_count){
+      //      $('#quantity').css("border", "2px solid red");
+      //         if(lang == 'az'){
+      //          toastr.warning('Mehsul Sayi duzgun deyil');
+      //      }else if(lang == 'ru'){
+      //          toastr.warning('Mehsul Sayi duzgun deyil');
+      //      }else if(lang == 'en'){
+      //          toastr.warning('Mehsul Sayi duzgun deyil')
+      //      }
+       //           }
+
+        if (size == undefined) {
+            $('#sizes-cart li').css("border", "2px solid red");
+            if(lang == 'az'){
+                toastr.warning('Ölçü seçimi etmədiniz');
+            }else if(lang == 'ru'){
+                toastr.warning('Пожалуйста выберите размер');
+            }else if(lang == 'en'){
+                toastr.warning('Please,select a size')
+            }
+        }else{
+            $.get("/"+ lang +"/check-is-exists/" + id + '?size=' + size + '?quantity=' + quantity,
+            {
+                id: id,
+                size: size,
+                quantity: quantity
+            },
+            function (response) {
+                if(response == 1){
+                    $.get("/"+ lang +"/add-to-cart/" + id + '?size=' + size + '?quantity=' + quantity,
+                    {
+                        id: id,
+                        size: size,
+                        quantity: quantity
+                    },
+                    function (data, status) {
+                        $('#cartHolder').html(data.html);
+                       // $('#count_cart').html(data.count);
+                        if(lang == 'az'){
+                            toastr.success('Məhsul səbətə əlavə edildi');
+                        }else if(lang == 'ru'){
+                            toastr.success('Продукт был добавлен в корзину');
+                        }else if(lang == 'en'){
+                            toastr.success('Product added to the cart')
+                        }
+                        refreshCounts();
+                    });
+                }else{
+                    if(lang == 'az'){
+                        toastr.warning('Stokda yetərli qədər məhsul yoxdur');
+                    }else if(lang == 'ru'){
+                        toastr.warning('Недостаточно продуктов на складе');
+                    }else if(lang == 'en'){
+                        toastr.warning('There are not enough products in stock')
+                    }
+                    $('.doesnt_exists').css('display','block');
+                    let size_id ;
+                    if(size == 'small'){
+                        size_id = 1;
+                    }else if(size == 'medium'){
+                        size_id = 2;
+                    }else if(size == 'large'){
+                        size_id = 3;
+                    }else if(size == 'xlarge'){
+                        size_id = 4;
+                    }else if(size == 'xxlarge'){
+                        size_id = 5;
+                    }else if(size == 'xxxlarge'){
+                        size_id = 6;
+                    }
+                    $('#size_id').val(size_id);
+                }
+            });
+        }
+    }
+
+    // function add(getid){
+    // $.post("/add-to-cart/"+getid+"/size",
+    // {
+    //   id: getid,
+
+    // },
+    // function(data,status){
+
+    //     $('#cartHolder').html(data);
+    // //   console.log(data);
+    //   toastr.success('Məhsul səbətə atıldı')
+    //     refreshCounts();
+
+    // });
+
+    // }
+    function addtowishlist(getid) {
+        let lang = window.location.href.split('/')[3];
+        $.get("/add_to_wishlist/" + getid,
+            {
+                id: getid,
+            },
+            function (data, status) {
+               console.log('successfully added to wishlist');
+            });
+    }
+
+    // function addCompare(getid) {
+    //     let lang = window.location.href.split('/')[3];
+    //     console.log(lang);
+    //     $.get("/"+ lang + "/add-to-compare/" + getid,
+    //         {
+    //             id: getid,
+    //         },
+    //         function (data, status) {
+    //             if(lang == 'az'){
+    //                 toastr.success('Müqayisə siyahısına göndərildi');
+    //             }else if(lang == 'ru'){
+    //                 toastr.success('Добавлено для сравнения');
+    //             }else if(lang == 'en'){
+    //                 toastr.success('Added to compare')
+    //             }
+    //             refreshCounts();
+    //         });
+    // }
+
+    // function removeWishlist(getid) {
+    //     let lang = window.location.href.split('/')[3];
+    //     $.get("/remove_to_wishlist",
+    //         {
+    //             id: getid,
+    //         },
+    //         function (data, status) {
+    //            console.log('silindi wishlistden');
+    //         });
+    // }
+
+    function removeWishlist(getid) {
+        let lang = window.location.href.split('/')[3];
+        $.get("/remove_to_wishlist",
+            {
+                id: getid,
+            },
+            function (data, status) {
+                console.log('silindi wishlistden');
+            });
+
+    }
+
+    // function removeCompare(getid) {
+    //     let lang = window.location.href.split('/')[3];
+
+    //     $.get('/' + lang + "/remove-from-compare/" + getid,
+    //         function (data, status) {
+    //             console.log(data);
+    //             refreshCounts();
+    //             location.reload(true);
+    //         });
+    // }
+
+    // $('#remove').click(function () {
+
+        // $.post("/remove-from-cart/",
+        // {
+        //   id: $(this).attr("data-id"),
+        // },
+        // function(data,status){
+        //     $('#cartContains').html(data);
+        //     refreshCounts();
+        //     refreshPrice();
+        //     toastr.error('Məhsul səbətdən çıxarıldı')
+
+        // });
+    // });
+
+
+    // function refreshCounts() {
+    //     $.post("/gettotals",
+    //         {
+    //             id: "",
+    //         },
+    //         function (data, status) {
+    //             $('#countCartItems').html(data.cart);
+    //             $('#countWishlistItems').html(data.wishlist);
+    //             $('#totalprice').html(data.price + " AZN");
+    //         });
+    // }
+
+    // function refreshPrice(){
+    //     $.post("/totalprice",
+    // {
+    //   id: "",
+    // },
+    // function(data,status){
+    //
+    // });
+    // }
+</script>
 
 </body>
 

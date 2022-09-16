@@ -60,7 +60,7 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{  (!empty($product->thumbnail)? url('uploads/products/'.$product->thumbnail):asset('/admin/assets/img/avatars/1.png')  )}}" >
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a  onclick="addtowishlist({{$product->id}})" ><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                 <li><a class="btn-addto-cart" href="{{route('front.addtocart',['id'=>$product->id])}}"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
