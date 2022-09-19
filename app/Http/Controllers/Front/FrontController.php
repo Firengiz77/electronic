@@ -18,6 +18,7 @@ class FrontController extends Controller
     public function __construct()
     {
         $contact = Contact::first();
+       
         \View::share('contact', $contact);
 
     }
@@ -46,9 +47,9 @@ class FrontController extends Controller
         }
 
         session()->put('wishlist', $cart);
-        $cartitems = session()->get('wishlist');
+        $count = count(session()->get('wishlist'));
 
-        return $cartitems;
+        return response()->json(['message'=>'Sevimlilərə əlavə olundu','count'=>$count]);
 
     }
 
@@ -57,15 +58,19 @@ class FrontController extends Controller
         //     $cart = session()->get('wishlist');
         //    session()->put('cart', $cart);
         // }
-        $cart = session()->get('wishlist');
-        unset($cart[$request->id]);
-        \Session::put('wishlist', $cart);
+        $wishlists = session()->get('wishlist');
+        unset($wishlists[$request->id]);
+        \Session::put('wishlist', $wishlists);
 
-        // $cartitems = session()->get('wishlist');
-       // $view = view('front.component.cart', compact('cartitems'));
+       $count = count(session()->get('wishlist'));
+       $view = view('front.widget.wishlist', compact('wishlists'));
+      
+       return collect([
+        'html' => $view->render(),
+        'count'=> $count
+    ]);
+    //    return response()->json(['message'=>'Sevimlilərden silindi']);
 
-       // return $view->render();
-       return response()->json(['message'=>'deleted wishlist']);
     }
 
 

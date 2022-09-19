@@ -62,7 +62,8 @@
                             <ul class="featured__item__pic__hover">
                                 <li><a  onclick="addtowishlist({{$product->id}})" ><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a class="btn-addto-cart" href="{{route('front.addtocart',['id'=>$product->id])}}"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a  class="btn-addto-cart" id="myBtn_{{ $product->id }}"><i class="fa fa-shopping-cart"></i></a></li>
+
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -183,6 +184,18 @@
     </section>
     <!-- Blog Section End -->
 
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
 
 
 <script src="{{asset('/admin/js/sort.js')}}"></script>
