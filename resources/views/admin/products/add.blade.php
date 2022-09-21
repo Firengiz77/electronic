@@ -185,7 +185,7 @@
 
 <script src="{{ asset('/admin/js/file-upload.js') }}"></script>
 <script src="{{ asset('/admin/js/translate.js') }}"></script>
-      <script src="{{ asset('/admin/vendors/ckeditor/ckeditor.js') }}"></script>
-      <script src="{{ asset('/admin/assets/js/cketditor.js') }}"></script>
-      <script src="{{ asset('/admin/js/swal.js') }}"></script>
+<script src="{{ asset('/admin/vendors/ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('/admin/assets/js/cketditor.js') }}"></script>
+<script src="{{ asset('/admin/js/swal.js') }}"></script>
 @endsection

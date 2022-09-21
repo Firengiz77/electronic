@@ -138,4 +138,5 @@ Route::name('user.')->group(function () {
   });
 
 Route::get('/add_to_wishlist/{id}',[FrontController::class,'addtowishlist'])->name('addtowishlist') ; 
-Route::get('/remove_to_wishlist',[FrontController::class,'remove_to_wishlist'])->name('remove_to_wishlist') ; 
+Route::get('/remove_to_wishlist',[FrontController::class,'remove_to_wishlist'])->name('remove_to_wishlist');
+Route::post('/open_modal',[FrontController::class,'open_modal'])->name('open_modal') ;  

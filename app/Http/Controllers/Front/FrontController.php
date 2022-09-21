@@ -70,9 +70,20 @@ class FrontController extends Controller
         'count'=> $count
     ]);
     //    return response()->json(['message'=>'Sevimlilərden silindi']);
-
     }
 
+    public function open_modal(Request $request){
+
+        $product2 = Product::where('id',$request->id)->first();
+        $colors = Product_Color::where('id',$product2->color_id)->get();
+        $sizes = Product_size::where('id',$product2->size_id)->get();
+        
+
+        return view('front.widget.modal',compact('product2','colors','sizes'));
+        return response()->json(['product2'=>$product2]);
+
+
+    }
 
     public function addToCart($id,Request $request)
     {

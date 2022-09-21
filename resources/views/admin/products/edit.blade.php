@@ -100,7 +100,7 @@
 
                               <div class="mb-3 col-md-12 translate">
                                 <label for="author" class="form-label">Description</label>
-                                <input type="hidden" name="desc" value="{{ $product->desc }}">
+                                <input type="hidden" name="desc" value="{!! $product->desc !!}">
                                   <textarea
                                       class="form-control"
                                       id="editor"

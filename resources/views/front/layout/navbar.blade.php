@@ -121,7 +121,13 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="{{ route('user.wishlist') }}"><i class="fa fa-heart"></i> <span id="count234">{{  count(session()->get('wishlist')) }} </span></a></li>
+                            <li><a href="{{ route('user.wishlist') }}"><i class="fa fa-heart"></i> <span id="count234">
+                                @if(session()->get('wishlist') !== null)
+                                {{  count(session()->get('wishlist')) }} 
+                                @else
+                                0
+                                @endif
+                </span></a></li>
                             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                     </div>
