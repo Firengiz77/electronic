@@ -16,7 +16,15 @@
                         <a href="en" class="btn btn-success {{ app()->isLocale('en') ? 'active' : '' }}">En</a>
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <select id="largeSelect" name="cat_id" class="form-select form-select-lg">
+                        <option value="0">Select Category :</option>
+                        @foreach($categories as $category)
+                        <option value="{{ $category->id }}" > {!! json_decode($category['name'])->{app()->getLocale()} !!} </option>
+                        @endforeach
 
+                    </select>
+                </div>
 
               <!-- Examples -->
               <div class="row mb-5">
