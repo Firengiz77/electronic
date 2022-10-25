@@ -39,23 +39,7 @@
 
                             </select>
                         </div>
-                        <div class="row mb-3">
-                            <select id="largeSelect" name="color_id" class="form-select form-select-lg">
-                                <option value="0">Select Color :</option>
-                                @foreach($colors as $color)
-                                    <option value="{{ $color->id }}" @if($product->color_id == $color->id) selected @endif > {!! json_decode($color['name'])->{app()->getLocale()} !!} </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="row mb-3">
-                            <select id="largeSelect" name="size_id" class="form-select form-select-lg">
-                                <option value="0">Select Size :</option>
-                                @foreach($sizes as $size)
-                                    <option value="{{ $size->id }}"  @if($product->size_id == $size->id) selected @endif> {!! json_decode($size['size'])->{app()->getLocale()} !!} </option>
-                                @endforeach
-
-                            </select>
-                        </div>
+                    
 
                         <div class="row mb-3">
                             <div class="form-check form-check-inline mt-3">

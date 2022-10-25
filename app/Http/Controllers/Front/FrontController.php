@@ -12,6 +12,7 @@ use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
+use App\Models\Product_All;
 
 class FrontController extends Controller
 {
@@ -107,15 +108,12 @@ class FrontController extends Controller
     }
 
 
-
-
-
     public function index(){
         $slider = Slider::first();
         $blogs = Blog::orderBy('id','asc')->get();
-        $products = Product::orderBy('id','asc')->take(8)->get();
+        $products = Product::orderBy('id','asc')->take(12)->get();
         $topproducts = Product::orderBy('id','asc')->take(3)->get();
-        $categories = Category::orderBy('id','asc')->get();
+        $categories = Category::orderBy('id','asc')->whereNot('cat_id',0)->get();
         return view('front.page.index',compact('slider','blogs','products','categories','topproducts'));
     }
     public function contact(){
@@ -141,16 +139,17 @@ class FrontController extends Controller
     }
 
 
-
     public function shop(){
         $categories = Category::orderBy('id','asc')->get();
         $products = Product::orderBy('id','asc')->get();
         $colors =Product_Color::orderBy('id','asc')->get();
         $sizes =Product_size::orderBy('id','asc')->get();
         $topproducts=Product::orderBy('id','asc')->take(4)->get();
+        $product_all = Product_All::orderbY('id','asc')->get();
+    
         $min=Product::min('price');
         $max=Product::max('price');
-        return view('front.page.shop',compact('categories','products','colors','sizes','topproducts','min','max'
+        return view('front.page.shop',compact('categories','product_all','products','colors','sizes','topproducts','min','max'
         ));
     }
 

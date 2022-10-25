@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable =['name','slug','price','thumbnail','images','cat_id','size_id','color_id','on_stock','desc'];
+    protected $fillable =['name','slug','price','thumbnail','images','cat_id','on_stock','desc'];
 
     protected $casts = [
         'images' => 'array',
@@ -17,12 +17,6 @@ class Product extends Model
 
     public function category(){
         return $this->belongsTo('App\Models\Category','cat_id');
-    }
-    public function color(){
-        return $this->belongsTo('App\Models\Product_Color','color_id');
-    }
-    public function size(){
-        return $this->belongsTo('App\Models\Product_size','size_id');
     }
 
 }

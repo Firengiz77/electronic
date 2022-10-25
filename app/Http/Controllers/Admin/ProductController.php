@@ -9,8 +9,6 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Blog;
 use App\Models\Product;
-use App\Models\Product_Color;
-use App\Models\Product_size;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use Illuminate\Support\Facades\Validator;
@@ -51,8 +49,7 @@ class ProductController extends Controller
             'desc' => 'required',
             'slug'=>'required',
             'cat_id'=>'required',
-            'color_id'=>'required',
-            'size_id'=>'required',
+
             'images'=>'required',
             'price'=>'required',
             'thumbnail'=>'required',
@@ -84,8 +81,7 @@ class ProductController extends Controller
             'desc' => $data['desc'],
             'price' => $data['price'],
             'cat_id' => $data['cat_id'],
-            'color_id' => $data['color_id'],
-            'size_id' => $data['size_id'],
+       
             'images' => $data['images'],
             'slug' => $data['slug'],
             'thumbnail'=>$data['thumbnail'],
@@ -116,9 +112,8 @@ class ProductController extends Controller
     public function show()
     {
         $categories = Category::get();
-        $colors= Product_Color::get();
-        $sizes= Product_size::get();
-        return view('admin.products.add',compact('categories','colors','sizes'));
+
+        return view('admin.products.add',compact('categories'));
     }
 
     /**
@@ -131,9 +126,8 @@ class ProductController extends Controller
     {
         $product =  $this->crud->edit('App\Models\Product',$id);
         $categories = Category::get();
-        $colors= Product_Color::get();
-        $sizes= Product_size::get();
-        return view('admin.products.edit',compact('product', 'categories','colors','sizes'));
+
+        return view('admin.products.edit',compact('product', 'categories'));
     }
 
     /**

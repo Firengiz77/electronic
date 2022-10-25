@@ -80,7 +80,7 @@
 
 
                         </div>
-                        <div class="sidebar__item">
+                        <!-- <div class="sidebar__item">
                             <div class="latest-product__text">
                                 <h4>Latest Products</h4>
                                 <div class="latest-product__slider owl-carousel">
@@ -100,7 +100,7 @@
 
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-7">
@@ -118,10 +118,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        @foreach($products as $product2)
+                        @foreach($product_all as $product2)
+                        
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="{{  (!empty($product2->thumbnail)? url('uploads/products/'.$product2->thumbnail):asset('/admin/assets/img/avatars/1.png')  )}}">
+                                <div class="product__item__pic set-bg" data-setbg="{{  (!empty($product2['products']['thumbnail'])? url('uploads/products/'.$product2['products']['thumbnail']):asset('/admin/assets/img/avatars/1.png')  )}}">
                                     <ul class="product__item__pic__hover">
                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                         <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -129,11 +130,14 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">{!! json_decode($product2['name'])->{app()->getLocale()} !!}</a></h6>
-                                    <h5>$ {{$product2->price}}</h5>
+                                    <h6><a href="#"> {{ count($product_all->product_id) }}    {!! json_decode($product2['products']['name'])->{app()->getLocale()} !!}</a></h6>
+                                    <h5>$ {{$product2['products']['price']}}</h5>
+                                    <p>{!! json_decode($product2['colors']['name'])->{app()->getLocale()} !!}</p>
+                                    <p>{{ json_decode($product2['sizes']['size'])->{app()->getLocale()} }}</p>
                                 </div>
                             </div>
                         </div>
+                        
                         @endforeach
                     </div>
                     <div class="product__pagination">

@@ -47,14 +47,17 @@
                         <ul>
                             <li class="active" data-filter="*">All</li>
                             @foreach ($categories as $category)
+                           
                                 <li data-filter=".{{ $category->slug }}">{!! json_decode($category['name'])->{app()->getLocale()} !!}</li>
-                            @endforeach
+                       
+                                @endforeach
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="row featured__filter">
                 @foreach ($products as $product)
+                
                     <div class="col-lg-3 col-md-4 col-sm-6 mix {{ $product['category']['slug'] }}">
                         <div class="featured__item">
                             <div class="featured__item__pic set-bg"
