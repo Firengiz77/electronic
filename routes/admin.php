@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Front\UserController;
+use App\Http\Controllers\Admin\ProductAllController;
 // admin panel's routes
 
 
@@ -86,5 +87,17 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/products/update/{id}',[ProductController::class,'update'])->name('products_update');
     Route::get('/products/delete/{id}',[ProductController::class,'destroy'])->name('products_delete');
     Route::post('/product/delete_images/{id}',[ProductController::class,'delete_images_product'])->name('delete_images_product');
+
+
+
+    // Product_all routes
+    Route::get('/product_all',[ProductAllController::class,'index'])->name('product_all');
+    Route::get('/product_all/add',[ProductAllController::class,'show'])->name('product_all_add');
+    Route::get('/product_all/edit/{id}',[ProductAllController::class,'edit'])->name('product_all_edit');
+    Route::post('/product_all/add',[ProductAllController::class,'create'])->name('products_all_add');
+    Route::post('/product_all/update/{id}',[ProductAllController::class,'update'])->name('product_all_update');
+    Route::get('/product_all/delete/{id}',[ProductAllController::class,'destroy'])->name('product_all_delete');
+
+
 
 });

@@ -130,6 +130,20 @@
                               <div data-i18n="Blog">Size</div>
                           </a>
                       </li>
+                      <li class="menu-item @if(Route::is('admin.products')) active @endif">
+                          <a href="{{route('admin.products')}}" class="menu-link">
+                              <i class='bx bx-purchase-tag-alt menu-icon' ></i>
+                              <div data-i18n="Product">Product</div>
+                          </a>
+                      </li>
+
+                      <li class="menu-item">
+                          <a href="{{route('admin.product_all')}}" class="menu-link">
+                              <i class='bx bx-bar-chart menu-icon'></i>
+                              <div data-i18n="Blog">All Product</div>
+                          </a>
+                      </li>
+
                   </ul>
               </li>
 
@@ -140,12 +154,7 @@
                       <div data-i18n="Blog">Category</div>
                   </a>
               </li>
-              <li class="menu-item @if(Route::is('admin.products')) active @endif">
-                  <a href="{{route('admin.products')}}" class="menu-link">
-                      <i class='bx bx-purchase-tag-alt menu-icon' ></i>
-                      <div data-i18n="Product">Product</div>
-                  </a>
-              </li>
+            
 
 
 

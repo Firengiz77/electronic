@@ -29,11 +29,10 @@
                     <table>
                         <thead>
                             <tr>
-                                <th class="shoping__product">Products</th>
                                 <th>Image</th>
                                 <th>Name</th>
                                 <th>Price</th>
-                                <th></th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody id="wishlist12">

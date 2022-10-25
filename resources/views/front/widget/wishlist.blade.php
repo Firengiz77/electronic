@@ -11,10 +11,6 @@
       {{ $wishlist['price'] }}
         </div>
     </td>
-    <td class="shoping__cart__total">
-    </td>
-    <td class="shoping__cart__total">
-    </td>
     <td class="shoping__cart__item__close">
      <a  onclick="removeWishlist({{$wishlist['id']}})"   >    <span class="icon_close"></span> </a>
     </td>
